@@ -4,8 +4,8 @@ import Image from "next/image"
  import Link from "next/link"
 import { useState, useEffect } from "react"
 export default function Home() {
-    const [data , setData] = useState([])
-    const [loading , setLoading] = useState(true)
+    let [data , setData] = useState([])
+    let [loading , setLoading] = useState(true)
     useEffect(()=>{
   async function InnerFetching(){
       let clientdata = await fetch("https://fakestoreapi.com/products")
@@ -44,7 +44,7 @@ export default function Home() {
   <div className="grid grid-cols-3 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1">
 
 
- {data.map((mydata:any , item:any)=>{
+ {data.map((mydata:any , item)=>{
      return(
       <div key={item} className="my-5 m-10 rounded-md overflow-hidden shadow-2xl max-[1100px]:m-5">
         <div className="w-full h-[350px] bg-white p-10">
