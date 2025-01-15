@@ -46,7 +46,8 @@ export default function Home() {
 
  {data.map((mydata:any , item)=>{
      return(
-      <div key={item} className="my-5 m-10 rounded-md overflow-hidden shadow-2xl max-[1100px]:m-5">
+      <div  key={item}>
+      <Link href={`/Clientfetch/${mydata.id}`}><div className="my-5 m-10 rounded-md overflow-hidden shadow-2xl max-[1100px]:m-5">
         <div className="w-full h-[350px] bg-white p-10">
         <Image src={mydata.image} alt="" width={950} height={950} className="w-full h-full"/>
         </div>
@@ -54,6 +55,8 @@ export default function Home() {
        {/* <p className="m-5">{mydata.description}</p> */}
        <p className="m-3 text-[18px] font-[600]">Price : <span className="text-gray-500">${mydata.price} </span></p>
        <button className="ml-3 bg-blue-500 px-5 rounded-lg test-[16px] font-[600] mb-5 py-2 hover:scale-95">Shop</button>
+     </div>
+     </Link>
      </div>
      )
    })
